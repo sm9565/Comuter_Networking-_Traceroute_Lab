@@ -126,7 +126,7 @@ def get_route(hostname):
                 # Fill in end
                 try:  # try to fetch the hostname
                     # Fill in start
-                    hostname =gethostbyaddr(destAddr)
+                    hostname =gethostbyaddr(str(destAddr))
                     tracelist1.append(hostname)
                     # Fill in end
                 except herror:  # if the host does not provide a hostname
