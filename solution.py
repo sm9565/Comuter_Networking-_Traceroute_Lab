@@ -83,7 +83,7 @@ def get_route(hostname):
     for ttl in range(1, MAX_HOPS):
         for tries in range(TRIES):
 
-            #destAddr = gethostbyname(hostname)
+            destAddr = gethostbyname(hostname)
 
             icmp = getprotobyname("icmp")
 
@@ -127,7 +127,7 @@ def get_route(hostname):
                 # Fill in end
                 try:  # try to fetch the hostname
                     # Fill in start
-                    tracelist1.append(gethostbyname(hostname))
+                    tracelist1.append(gethostbyname(destAddr))
                     # Fill in end
                 except herror:  # if the host does not provide a hostname
                     # Fill in start
