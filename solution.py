@@ -122,11 +122,11 @@ def get_route(hostname):
                 # Fill in start
                 # Fetch the icmp type from the IP packet
                 header = recvPacket[20:28]
-                types, code, checksum, ID, sequence = struct.unpack("bbHHh", header)
-                name = gethostbyaddr(destAddr)
+                types, code, checksum, ID, sequence = struct.unpack("bbHHh", header)  
                 # Fill in end
                 try:  # try to fetch the hostname
                     # Fill in start
+                    name = gethostbyaddr(addr[0])
                     tracelist1.append(name)
                     tracelist2.append(tracelist1)
                     # Fill in end
